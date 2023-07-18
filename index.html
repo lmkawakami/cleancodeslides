@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+    <title>python clean code presentation</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/dracula.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <article id="webslides">
+
+            <!-- Slide 1 -->
+            <section class="aligncenter bg-black">
+                <h1>Clean Code</h1>
+                <h2>Escrevendo Código Python Legível e Manutenível</h2>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="aligncenter bg-black">
+                <div class="wrap">
+                    <h2>Introdução</h2>
+                    <br>
+                    <div class="text-cols">
+                    <p><strong>Clean code</strong> se refere a um estilo de programação que se concentra em tornar o código fonte <strong>mais legível, compreensível e fácil de manter</strong></p>
+                    <p>É um <strong>conjunto de práticas e diretrizes</strong> que promovem uma estrutura clara, nomes descritivos, funções concisas e outras abordagens que ajudam os desenvolvedores a criar <strong>software de alta qualidade</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="aligncenter bg-black">
+                <h2>Benefícios do clean code:</h2>
+                <br>
+                <div class="card-70 grid vertical-align">
+                    <ol class="text-cols">
+                        <h4><li>Legibilidade aprimorada</li></h4>
+                        <h4><li>Facilidade de manutenção</li></h4>
+                        <h4><li>Redução de bugs e erros</li></h4>
+                        <h4><li>Colaboração eficiente em equipes</li></h4>
+                    </ol>
+                </div>
+                
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="aligncenter bg-black">
+                <h2>Legibilidade aprimorada:</h2>
+                <br>
+                <div class="card-70 grid vertical-align">
+                    <ul class="text-cols">
+                        <li>O código com uma estrutura clara e nomes descritivos facilita a compreensão do que está acontecendo em cada parte do programa.</li>
+                        <li>Outros desenvolvedores (incluindo você mesmo no futuro) poderão entender mais facilmente o código e fazer modificações quando necessário.</li>
+                        <li>A legibilidade também ajuda na depuração e na identificação rápida de erros.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 5 -->
+            <section class="aligncenter bg-black">
+                <h2>Facilidade de manutenção:</h2>
+                <br>
+                <div class="card-70 grid vertical-align">
+                    <ul class="text-cols">
+                        <li>O código limpo é mais fácil de manter. Quando você precisa fazer alterações ou corrigir erros, é mais rápido localizar a parte relevante do código e realizar as modificações necessárias.</li>
+                        <li>Menos tempo é gasto na decodificação e na compreensão de trechos de código confusos ou mal estruturados.</li>
+                        <li>Isso resulta em um processo de manutenção mais eficiente e menos propenso a introduzir novos bugs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 6 -->
+            <section class="aligncenter bg-black">
+                <h2>Redução de bugs e erros:</h2>
+                <br>
+                <div class="card-70 grid vertical-align">
+                    <ul class="text-cols">
+                        <li>O código limpo tende a ter menos bugs. Quando você segue boas práticas de clean code, é menos provável que cometa erros e introduza bugs.</li>
+                        <li>A clareza do código também ajuda a identificar e corrigir erros mais rapidamente durante o processo de depuração.</li>
+                        <li>Além disso, a aplicação de técnicas como a separação de responsabilidades e a modularização do código contribui para um código mais robusto e menos propenso a erros.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 7 -->
+            <section class="aligncenter bg-black">
+                <h2>Colaboração eficiente em equipes:</h2>
+                <br>
+                <div class="card-70 grid vertical-align">
+                    <ul class="text-cols">
+                        <li>O código limpo é mais fácil de compartilhar e colaborar com outros membros da equipe. Cada pessoa pode entender o código rapidamente e contribuir de forma mais eficaz para o projeto.</li>
+                        <li>Uma base de código limpa promove um ambiente de trabalho harmonioso e facilita a manutenção do código ao longo do tempo.</li>
+                        <li>Além disso, ao seguir as práticas de clean code, você estará criando um padrão de qualidade que pode ser adotado por toda a equipe, garantindo consistência e uniformidade no código.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 8 -->
+            <section class="aligncenter bg-black">
+                <h2>Nomes descritivos de variáveis, funções e classes:</h2>
+                <br>
+                <div class="card-70 grid vertical-align">
+                    <ul class="text-cols">
+                        <li>Use nomes que expressem claramente o propósito e a função das suas variáveis, funções e classes.</li>
+                        <li>Evite abreviações ou nomes genéricos que possam levar a ambiguidades ou dificuldades de entendimento.</li>
+                        <li>Nomes descritivos tornam o código mais legível e facilitam a compreensão do que cada elemento faz.</li>
+                        <li>Mantenha a nomenclatura consistente para evitar confusão e variação desnecessária no código.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 9 -->
+            <section class="aligncenter bg-black">
+                <h2>Nomes descritivos de variáveis, funções e classes:</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+import datetime
+
+ymdstr = datetime.date.today().strftime("%y-%m-%d")
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+import datetime
+
+current_date: str = datetime.date.today().strftime("%y-%m-%d")
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10 -->
+            <section class="aligncenter bg-black">
+                <h2>Nomes descritivos de variáveis, funções e classes:</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+def calc_area(a, b):
+    result = a * b
+    return result
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+def calcular_area_retangulo(comprimento, largura):
+    area = comprimento * largura
+    return area
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Nomes descritivos de variáveis, funções e classes:</h2>
+                <p class="text-intro">Se a entidade é a mesma, mantenha a consistência</p>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+def get_user_info(): pass
+
+def get_client_data(): pass
+
+def get_customer_record(): pass
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+def get_user_info(): pass
+
+def get_user_data(): pass
+
+def get_user_record(): pass
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Nomes descritivos de variáveis, funções e classes:</h2>
+                <p class="text-intro">Use variáveis com nomes explicativos em vez de valores mágicos e comentários (que podem ficar desatualizados)</p>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+import time
+
+# Número de segundos em um dia
+time.sleep(86400)
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+import time
+
+# Declare them in the global namespace for the module.
+SECONDS_IN_A_DAY = 60 * 60 * 24
+time.sleep(SECONDS_IN_A_DAY)
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Evite mapear mentalmente</h2>
+                <p class="text-intro">Não force o leitor do seu código a traduzir o que a variável significa. Explicito é melhor que implícito.</p>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+seq = ("Austin", "New York", "San Francisco")
+
+for item in seq:
+    # do_stuff()
+    # do_some_other_stuff()
+
+    # Wait, what's `item` again?
+    print(item)
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+locations = ("Austin", "New York", "San Francisco")
+
+for location in locations:
+    # do_stuff()
+    # do_some_other_stuff()
+    # ...
+    print(location)
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Não adicione contextos desnecessários</h2>
+                <p class="text-intro">Se o nome da sua classe/objeto expressa algo, não repita isso no nome da variável.</p>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+class Car:
+    car_maker: str
+    car_model: str
+    car_color: str
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+class Car:
+    maker: str
+    model: str
+    color: str
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Use argumentos padrões ao invés de encadear condicionais</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+import hashlib
+
+
+def create_micro_brewery(name):
+    name = "Hipster Brew Co." if name is None else name
+    slug = hashlib.sha1(name.encode()).hexdigest()
+    # etc.
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+import hashlib
+
+
+def create_micro_brewery(name: str = "Hipster Brew Co."):
+    slug = hashlib.sha1(name.encode()).hexdigest()
+    # etc.
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Funções</h2>
+                <br>
+                <div class="card-70 grid vertical-align">
+                    <ul class="text-cols">
+                        <li>Minimize o número de argumentos das funções. Se fizer sentido crie classes/objetos.</li>
+                        <li>Nomes das funções devem dizer o que elas fazem.</li>
+                        <li>Nomes descritivos tornam o código mais legível e facilitam a compreensão do que cada elemento faz.</li>
+                        <li>Mantenha a nomenclatura consistente para evitar confusão e variação desnecessária no código.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Minimize o número de argumentos das funções</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+def send_email(recipient, message, subject, cc, bcc):
+    # Code to send email
+    print(f"""
+        Sending email to {recipient}
+        with subject '{subject}',
+        CC: {cc},
+        BCC: {bcc}',
+        Message: {message}"""
+    )
+
+
+
+
+
+
+
+
+
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+from pydantic import BaseModel
+
+class Email(BaseModel):
+    recipient: str
+    message: str
+    subject: str = ''
+    cc: str = ''
+    bcc: str = ''
+
+def send_email(email: Email):
+    # Code to send email
+    print(f"""
+        Sending email to {recipient}
+        with subject '{subject}',
+        CC: {cc},
+        BCC: {bcc}',
+        Message: {message}"""
+    )
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Nomes das funções devem dizer o que elas fazem.</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+class Email:
+    def handle(self) -> None:
+        pass
+
+message = Email()
+# What is this supposed to do again?
+message.handle()
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+class Email:
+    def send(self) -> None:
+        """Send this message"""
+
+message = Email()
+message.send()
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Funções devem estar em apenas um nível de abstração</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+def process_data(data):
+    processed_data = []
+    for item in data:
+        processed_item = preprocess_item(item)
+        processed_data.append(processed_item)
+
+    result = 0
+    for item in processed_data:
+        result += perform_calculation(item)
+
+    return result
+
+def preprocess_item(item):
+    # Preprocess item logic here
+    pass
+
+def perform_calculation(item):
+    # Perform calculation logic here
+    pass
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+def process_data(data):
+    preprocessed_data = preprocess_data(data)
+    result = perform_calculation(preprocessed_data)
+    return result
+
+def preprocess_data(data):
+    # Preprocess data logic here
+    pass
+
+def perform_calculation(preprocessed_data):
+    # Perform calculation logic here
+    pass
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Não use flags como parâmetros de função</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+from typing import Text
+from tempfile import gettempdir
+from pathlib import Path
+
+def create_file(name: Text, temp: bool) -> None:
+    if temp:
+        (Path(gettempdir()) / name).touch()
+    else:
+        Path(name).touch()
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+from typing import Text
+from tempfile import gettempdir
+from pathlib import Path
+
+
+def create_file(name: Text) -> None:
+    Path(name).touch()
+
+
+def create_temp_file(name: Text) -> None:
+    (Path(gettempdir()) / name).touch()
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Evite efeitos colaterais</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+fullname = "Ryan McDermott"
+
+def split_into_first_and_last_name() -> None:
+    global fullname
+    fullname = fullname.split()
+
+split_into_first_and_last_name()
+print(fullname)  # ["Ryan", "McDermott"]
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+from typing import List, AnyStr
+
+
+def split_into_first_and_last_name(name: AnyStr) -> List[AnyStr]:
+    return name.split()
+
+fullname = "Ryan McDermott"
+name, surname = split_into_first_and_last_name(fullname)
+
+print(name, surname)  # => Ryan McDermott
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Evite efeitos colaterais</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>✅✅✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+from dataclasses import dataclass
+
+
+@dataclass
+class Person:
+    name: str
+
+    @property
+    def name_as_first_and_last(self) -> list:
+        return self.name.split()
+
+
+# The reason why we create instances of classes is to manage state!
+person = Person("Ryan McDermott")
+print(person.name)  # => "Ryan McDermott"
+print(person.name_as_first_and_last)  # => ["Ryan", "McDermott"]
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Princípio da Responsabilidade Única (SRP)</h2>
+                <div >
+                    <div>
+                        <strong>"A class should have only one reason to change."</strong>
+                        <br>
+                        Robert C. Martin
+                    </div>
+                    <br>
+                    <div>
+                        <p><strong>"Reasons to change"</strong> são as responsabilidades administradas por uma classe ou função</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Princípio da Responsabilidade Única (SRP)</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    def save_to_database(self):
+        # Code to save user data to the database
+        pass
+
+    def send_email(self, message):
+        # Code to send an email to the user
+        pass
+
+    def generate_report(self):
+        # Code to generate a user report
+        pass
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+
+class UserDatabase:
+    def save_to_database(self, user):
+        # Code to save user data to the database
+        pass
+
+
+class EmailService:
+    def send_email(self, user, message):
+        # Code to send an email to the user
+        pass
+
+
+class ReportGenerator:
+    def generate_report(self, user):
+        # Code to generate a user report
+        pass
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Princípio do Aberto/Fechado (OCP)</h2>
+                <div >
+                    <div>
+                        <strong>“Incorporate new features by extending the system, not by making modifications (to it)”</strong>
+                        <br>
+                        Robert C. Martin
+                    </div>
+                    <br>
+                    <div>
+                        <p>Os objetos devem estar <strong>abertos para extensão</strong>, mas <strong>fechados para modificação</strong>. Deve ser possível ampliar a funcionalidade fornecida por um objeto (por exemplo, uma classe) sem alterar seus contratos internos. Um objeto pode permitir isso quando é projetado para ser estendido de forma limpa.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Princípio do Aberto/Fechado (OCP)</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+from dataclasses import dataclass
+
+
+@dataclass
+class Response:
+    status: int
+    content_type: str
+    body: str
+
+
+class View:
+    def get(self, request) -> Response:
+        return Response(
+            status=200,
+            content_type='text/plain',
+            body="Welcome to my web site"
+        )
+
+
+class TemplateView(View):
+    def get(self, request) -> Response:
+        with open("index.html") as fd:
+            return Response(
+                status=200,
+                content_type='text/html',
+                body=fd.read()
+            )
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+from dataclasses import dataclass
+
+
+@dataclass
+class Response:
+    status: int
+    content_type: str
+    body: str
+
+
+class View:
+    content_type = "text/plain"
+
+    def get(self, request) -> Response:
+        return Response(
+            status=200,
+            content_type=self.content_type,
+            body=self.render_body()
+        )
+
+    def render_body(self) -> str:
+        return "Welcome to my web site"
+
+
+class TemplateView(View):
+    content_type = "text/html"
+    template_file = "index.html"
+
+    def render_body(self) -> str:
+        with open(self.template_file) as fd:
+            return fd.read()
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Princípio do Aberto/Fechado (OCP)</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <pre>
+                            <code id="sourcecode" class="python">
+from dataclasses import dataclass, field
+from typing import Protocol
+
+
+@dataclass
+class Response:
+    """An HTTP response"""
+
+    status: int
+    content_type: str
+    body: str
+    headers: dict = field(default_factory=dict)
+
+
+class View:
+    """A simple view that returns plain text responses"""
+
+    content_type = "text/plain"
+
+    def render_body(self) -> str:
+        """Render the message body of the response"""
+        return "Welcome to my web site"
+
+    def get(self, request) -> Response:
+        """Handle a GET request and return a message in the response"""
+        return Response(
+            status=200,
+            content_type=self.content_type,
+            body=self.render_body()
+        )
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <pre>
+                            <code id="sourcecode" class="python">
+class TemplateRenderMixin:
+    """A mixin class for views that render HTML documents using a template file
+
+    Not to be used by itself!
+    """
+    template_file: str = ""
+
+    def render_body(self) -> str:
+        """Render the message body as HTML"""
+        if not self.template_file:
+            raise ValueError("The path to a template file must be given.")
+
+        with open(self.template_file) as fd:
+            return fd.read()
+
+
+class ContentLengthMixin:
+    """A mixin class for views that injects a Content-Length header in the
+    response
+
+    Not to be used by itself!
+    """
+
+    def get(self, request) -> Response:
+        """Introspect and amend the response to inject the new header"""
+        response = super().get(request)  # type: ignore
+        response.headers['Content-Length'] = len(response.body)
+        return response
+
+
+class TemplateView(TemplateRenderMixin, ContentLengthMixin, View):
+    """A view that returns HTML responses based on a template file."""
+
+    content_type = "text/html"
+    template_file = "index.html"
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Princípio da Segregação de Interface (ISP)</h2>
+                <div >
+                    <div>
+                        <strong>“Keep interfaces small so that users don’t end up depending on things they don’t need.”</strong>
+                        <br>
+                        Robert C. Martin
+                    </div>
+                    <br>
+                    <div>
+                        <p>Evite obrigar a implementação de métodos que não serão utilizados</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Princípio da Segregação de Interface (ISP)</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+import abc
+
+
+class Persistable(metaclass=abc.ABCMeta):
+        """Serialize a file to data and back"""
+
+        @property
+        @abc.abstractmethod
+        def data(self) -> bytes:
+            """The raw data of the file"""
+
+        @classmethod
+        @abc.abstractmethod
+        def load(cls, name: str):
+            """Load the file from disk"""
+
+        @abc.abstractmethod
+        def save(self) -> None:
+            # Cria a obrigatoriedade de implementar o método
+            """Save the file to disk"""
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>⚠️</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+# We just want to serve the documents, so our concrete PDF document
+# implementation just needs to implement the `.load()` method and have
+# a public attribute named `data`.
+
+class PDFDocument(Persistable):
+        """A PDF document"""
+
+        @property
+        def data(self) -> bytes:
+            """The raw bytes of the PDF document"""
+            ...  # Code goes here - omitted for brevity
+
+        @classmethod
+        def load(cls, name: str):
+            """Load the file from the local filesystem"""
+            ...  # Code goes here - omitted for brevity
+
+
+def view(request):
+        """A web view that handles a GET request for a document"""
+        requested_name = request.qs['name']  # We want to validate this!
+        return PDFDocument.load(requested_name).data
+
+# Error:
+# Can't instantiate abstract class PDFDocument with abstract method save.
+                            </code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aligncenter bg-black">
+                <h2>Princípio da Segregação de Interface (ISP)</h2>
+                <div class="grid vertical-align">
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+import abc
+
+
+class DataCarrier(metaclass=abc.ABCMeta):
+    """Carries a data payload"""
+
+    @property
+    def data(self):
+        ...
+
+
+class Loadable(DataCarrier):
+    """Can load data from storage by name"""
+
+    @classmethod
+    @abc.abstractmethod
+    def load(cls, name: str):
+        ...
+
+
+class Saveable(DataCarrier):
+    """Can save data to storage"""
+
+    @abc.abstractmethod
+    def save(self) -> None:
+        ...
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="flexblock">
+                        <h6>✅</h6>
+                        <pre>
+                            <code id="sourcecode" class="python">
+class PDFDocument(Loadable):
+    """A PDF document"""
+
+    @property
+    def data(self) -> bytes:
+        """The raw bytes of the PDF document"""
+        ...  # Code goes here - omitted for brevity
+
+    @classmethod
+    def load(cls, name: str) -> None:
+        """Load the file from the local filesystem"""
+        ...  # Code goes here - omitted for brevity
+
+
+def view(request):
+    """A web view that handles a GET request for a document"""
+    requested_name = request.qs['name']  # We want to validate this!
+    return PDFDocument.load(requested_name).data
+
+# Quando for implementar a funcionalidade de save pro PDF:
+# class PDFDocument(Loadable, Saveable):
+#   ...
+                            </code>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+    <script src="static/js/webslides.js"></script>
+    <script>
+        window.ws = new WebSlides();
+    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

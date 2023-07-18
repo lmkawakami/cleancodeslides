@@ -1,0 +1,28 @@
+
+.bg-black {
+    padding: 1em !important;
+    background-color: rgb(52, 52, 52);
+}
+
+code {
+    font-size: 1em !important;
+    background-color: rgb(39, 39, 39) !important;
+}
+
+h6 {
+    width: 100%;
+    text-align: center;
+}
+
+
+pre {
+    padding: 0em !important;
+    background-color: rgb(39, 39, 39) !important;
+    border-color: rgb(98, 98, 98);
+    line-height: normal !important;
+}
+
+.flexblock {
+    margin: 1em;
+}
+
